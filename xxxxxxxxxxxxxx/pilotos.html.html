@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iker Giral | Consultoría Estratégica Motorsport</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            background-color: #0f172a;
+            color: #f8fafc;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 650px;
+            height: 380px;
+            margin: 0 auto;
+        }
+        .step-card {
+            transition: all 0.3s ease;
+        }
+        .step-card:hover {
+            transform: translateY(-8px);
+            border-color: #06b6d4;
+            background-color: #1e293b;
+        }
+        .glow-text {
+            text-shadow: 0 0 10px rgba(6, 182, 212, 0.5);
+        }
+        .btn-contact {
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+        /* Logo de LinkedIn en CSS */
+        .linkedin-icon-css {
+            background-color: white;
+            color: #0077B5;
+            font-weight: 900;
+            font-size: 10px;
+            padding: 1px 3px;
+            border-radius: 2px;
+            line-height: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <header class="relative min-h-[70vh] flex flex-col justify-center items-center text-center px-4 py-20 bg-gradient-to-b from-slate-900 via-slate-900 to-slate-800 border-b border-slate-700">
+        <div class="z-10 max-w-5xl mx-auto">
+            <span class="inline-block py-1 px-4 rounded-full bg-cyan-900/30 text-cyan-400 text-xs font-bold tracking-widest uppercase mb-6 border border-cyan-500/30">
+                Strategic Motorsport Consulting & Brand Design
+            </span>
+            <h1 class="text-5xl md:text-7xl font-black mb-6 tracking-tight leading-none bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-white to-fuchsia-500">
+                TRANSFORMA TU VELOCIDAD <br> EN UN ACTIVO RENTABLE
+            </h1>
+            <p class="text-xl text-slate-400 max-w-3xl mx-auto leading-relaxed mb-10">
+                Identifico los <strong>cuellos de botella</strong> que frenan tu crecimiento. No solo corres en pista; construimos una marca de élite que los patrocinadores <u>necesitan</u> contratar.
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <div class="px-6 py-3 bg-slate-800 rounded-lg border border-slate-700">
+                    <span class="block text-2xl font-bold text-white">Value Return</span>
+                    <span class="text-xs text-cyan-400 uppercase">Estrategia ROI</span>
+                </div>
+                <div class="px-6 py-3 bg-slate-800 rounded-lg border border-slate-700">
+                    <span class="block text-2xl font-bold text-white">Método CORE</span>
+                    <span class="text-xs text-fuchsia-400 uppercase">Ecosistema Digital</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 py-12 space-y-32">
+
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+            <div class="space-y-6">
+                <h2 class="text-3xl md:text-4xl font-bold text-white leading-tight">
+                    ¿Por qué los patrocinadores <span class="text-fuchsia-500">no llegan</span>?
+                </h2>
+                <p class="text-slate-300 text-lg">
+                    Muchos pilotos basan su carrera solo en el talento técnico. Pero para una marca, eres un <strong>canal de comunicación</strong>. Si no ofreces retorno, eres un gasto, no una inversión.
+                </p>
+                <div class="space-y-4">
+                    <div class="flex items-start gap-4 p-4 bg-slate-800/50 rounded-xl border-l-4 border-fuchsia-600">
+                        <p class="text-sm"><strong>El Error:</strong> Creer que los resultados en pista atraen dinero automáticamente.</p>
+                    </div>
+                    <div class="flex items-start gap-4 p-4 bg-slate-800/50 rounded-xl border-l-4 border-cyan-500">
+                        <p class="text-sm"><strong>La Oportunidad:</strong> Diseñar una narrativa emocional que convierta seguidores en fanáticos y marcas en partners.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="chart-container bg-slate-800/30 p-6 rounded-2xl border border-slate-700">
+                <canvas id="sponsorshipChart"></canvas>
+            </div>
+        </section>
+
+        <section class="space-y-12">
+            <div class="text-center max-w-3xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold text-white">Diagnóstico de Autoridad y Relevancia</h2>
+                <p class="text-slate-400 mt-4 italic">Identificamos el "Freno de Mano" de tu presencia profesional.</p>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center bg-slate-800/40 p-10 rounded-3xl border border-slate-700">
+                <div class="lg:col-span-1 space-y-8">
+                    <div>
+                        <h4 class="text-cyan-400 font-bold uppercase text-sm tracking-widest mb-2">Autoridad</h4>
+                        <p class="text-slate-300 text-sm">Posicionamiento como referente experto, no solo como deportista.</p>
+                    </div>
+                    <div>
+                        <h4 class="text-fuchsia-400 font-bold uppercase text-sm tracking-widest mb-2">Engagement</h4>
+                        <p class="text-slate-300 text-sm">Capacidad de movilizar a una audiencia real hacia objetivos de marca.</p>
+                    </div>
+                    <div>
+                        <h4 class="text-lime-400 font-bold uppercase text-sm tracking-widest mb-2">Storytelling</h4>
+                        <p class="text-slate-300 text-sm">Narrativa que conecta la adrenalina de la pista con el valor del sponsor.</p>
+                    </div>
+                </div>
+                <div class="lg:col-span-2">
+                    <div class="chart-container">
+                        <canvas id="radarAuditChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="space-y-16">
+            <div class="border-b border-slate-700 pb-8">
+                <h2 class="text-3xl font-bold text-white">Mi Hoja de Ruta: El Sistema de 4 Líneas</h2>
+                <p class="text-slate-400 mt-2">Basado en el Método CORE de Pedro Buerbaum y Estrategias de Ultra-oferta.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="p-8 bg-slate-800/50 border border-slate-700 rounded-2xl step-card">
+                    <span class="text-4xl mb-4 block">⚙️</span>
+                    <h3 class="text-xl font-bold text-white mb-2">1. Setup Estratégico</h3>
+                    <p class="text-sm text-slate-400">Diseño de la base. Análisis de marca, identidad visual y definición del Buyer Persona.</p>
+                </div>
+                <div class="p-8 bg-slate-800/50 border border-slate-700 rounded-2xl step-card">
+                    <span class="text-4xl mb-4 block">📈</span>
+                    <h3 class="text-xl font-bold text-white mb-2">2. Proyección</h3>
+                    <p class="text-sm text-slate-400">Rampas de crecimiento. Plan de contenidos, embudos de venta y networking estratégico.</p>
+                </div>
+                <div class="p-8 bg-slate-800/50 border border-slate-700 rounded-2xl step-card">
+                    <span class="text-4xl mb-4 block">🎯</span>
+                    <h3 class="text-xl font-bold text-white mb-2">3. Optimización</h3>
+                    <p class="text-sm text-slate-400">Campañas concretas. Hooks de alto impacto, copies persuasivos y gestión de insights.</p>
+                </div>
+                <div class="p-8 bg-slate-800/50 border border-slate-700 rounded-2xl step-card">
+                    <span class="text-4xl mb-4 block">📊</span>
+                    <h3 class="text-xl font-bold text-white mb-2">4. Gestión Mensual</h3>
+                    <p class="text-sm text-slate-400">Medición exhaustiva. Reporte de KPIs, control de presupuesto y corrección de rumbo.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div class="chart-container">
+                <canvas id="funnelEngagementChart"></canvas>
+            </div>
+            <div class="space-y-8">
+                <h2 class="text-3xl font-bold text-white">La Escalera del Engagement</h2>
+                <p class="text-slate-300">
+                    No buscamos seguidores, construimos relevancia. Mi sistema asegura que el espectador ocasional se convierta en un activo monetizable para tu carrera.
+                </p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs font-bold uppercase tracking-widest">
+                    <div class="p-4 bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 rounded-lg text-center">Captación (Hooks)</div>
+                    <div class="p-4 bg-fuchsia-500/10 border border-fuchsia-500/30 text-fuchsia-400 rounded-lg text-center">Fidelización</div>
+                    <div class="p-4 bg-lime-500/10 border border-lime-500/30 text-lime-400 rounded-lg text-center">Conversión (ROI)</div>
+                    <div class="p-4 bg-white/10 border border-white/30 text-white rounded-lg text-center">Autoridad Top</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="space-y-12">
+            <div class="text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-white italic uppercase">Brand 2 Cash: De Marca a Efectivo</h2>
+                <p class="text-slate-400 mt-4 max-w-2xl mx-auto">
+                    El valor financiero de tu marca crece exponencialmente cuando aplicamos una estrategia de <strong>Sostenibilidad y Protección de Marca</strong>.
+                </p>
+            </div>
+            <div class="bg-slate-900 p-8 rounded-3xl border border-slate-800 shadow-2xl">
+                <div class="chart-container" style="max-width: 900px;">
+                    <canvas id="financeLineChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <footer class="text-center py-24 border-t border-slate-800">
+            <div class="max-w-4xl mx-auto space-y-10">
+                <h2 class="text-4xl font-black text-white tracking-tight uppercase italic">¿Listo para el análisis estratégico?</h2>
+                <p class="text-slate-400 text-lg">
+                    Analicemos tus <strong>cuellos de botella</strong> y transformemos tu presencia en un motor de rentabilidad. Contacto directo disponible:
+                </p>
+                
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-6 pt-4">
+                    <!-- LinkedIn con Logo CSS -->
+                    <a href="https://www.linkedin.com/in/iker-giral-mart%C3%ADnez-a182b6222/" target="_blank" class="btn-contact w-full sm:w-auto px-10 py-5 bg-[#0077B5] hover:bg-[#005a8a] text-white font-black rounded-2xl shadow-xl transition-all hover:scale-105 uppercase tracking-tighter text-base">
+                        <span class="linkedin-icon-css">in</span> Mi LinkedIn
+                    </a>
+                    
+                    <!-- WhatsApp con Logo Emoji -->
+                    <a href="tel:+34662551685" class="btn-contact w-full sm:w-auto px-10 py-5 bg-lime-500 hover:bg-lime-400 text-slate-950 font-black rounded-2xl shadow-xl transition-all hover:scale-105 uppercase tracking-tighter text-base">
+                        <span>💬</span> WhatsApp Directo
+                    </a>
+                </div>
+
+                <div class="pt-24 text-[10px] text-slate-600 uppercase tracking-[0.4em] font-bold">
+                    IKER GIRAL MARTÍNEZ | CONSULTORÍA ESTRATÉGICA MOTORSPORT | © 2024
+                </div>
+            </div>
+        </footer>
+
+    </main>
+
+    <script>
+        function wrapLabel(label) {
+            if (typeof label !== 'string' || label.length <= 16) return label;
+            const words = label.split(' ');
+            const lines = [];
+            let currentLine = words[0];
+            for (let i = 1; i < words.length; i++) {
+                if ((currentLine + " " + words[i]).length <= 16) {
+                    currentLine += " " + words[i];
+                } else {
+                    lines.push(currentLine);
+                    currentLine = words[i];
+                }
+            }
+            lines.push(currentLine);
+            return lines;
+        }
+
+        const tooltipConfig = {
+            plugins: {
+                tooltip: {
+                    callbacks: {
+                        title: function(tooltipItems) {
+                            const item = tooltipItems[0];
+                            let label = item.chart.data.labels[item.dataIndex];
+                            return Array.isArray(label) ? label.join(' ') : label;
+                        }
+                    },
+                    backgroundColor: '#1e293b',
+                    titleColor: '#06b6d4',
+                    borderColor: '#334155',
+                    borderWidth: 1,
+                    padding: 12
+                }
+            }
+        };
+
+        new Chart(document.getElementById('sponsorshipChart'), {
+            type: 'doughnut',
+            data: {
+                labels: ['ROI y Valor de Negocio', 'Visibilidad y Audiencia', 'Talento en Pista', 'Valores de Marca'].map(wrapLabel),
+                datasets: [{
+                    data: [45, 30, 15, 10],
+                    backgroundColor: ['#d946ef', '#06b6d4', '#475569', '#84cc16'],
+                    borderWidth: 0,
+                    hoverOffset: 15
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                cutout: '70%',
+                plugins: {
+                    ...tooltipConfig.plugins,
+                    legend: { position: 'bottom', labels: { color: '#94a3b8', font: { size: 10 } } },
+                    title: { display: true, text: 'Prioridades del Patrocinador Moderno', color: '#f8fafc', font: { size: 14 } }
+                }
+            }
+        });
+
+        new Chart(document.getElementById('radarAuditChart'), {
+            type: 'radar',
+            data: {
+                labels: ['Autoridad Sector', 'Relevancia Social', 'Potencial ROI', 'Storytelling', 'Fan Engagement', 'Gestión de Datos'].map(wrapLabel),
+                datasets: [{
+                    label: 'Piloto Tradicional',
+                    data: [30, 40, 20, 20, 30, 10],
+                    borderColor: '#475569',
+                    backgroundColor: 'rgba(71, 85, 105, 0.2)',
+                    borderDash: [5, 5]
+                }, {
+                    label: 'Piloto con Estrategia Iker Giral',
+                    data: [90, 85, 95, 90, 95, 80],
+                    borderColor: '#06b6d4',
+                    backgroundColor: 'rgba(6, 182, 212, 0.2)',
+                    pointBackgroundColor: '#06b6d4'
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    r: {
+                        grid: { color: '#334155' },
+                        angleLines: { color: '#334155' },
+                        pointLabels: { color: '#94a3b8', font: { size: 10 } },
+                        ticks: { display: false }
+                    }
+                },
+                plugins: tooltipConfig.plugins
+            }
+        });
+
+        new Chart(document.getElementById('funnelEngagementChart'), {
+            type: 'bar',
+            data: {
+                labels: ['Alcance (Nuevos)', 'Interés (Seguidores)', 'Fanatismo (Lealtad)', 'Conversión (Sponsors)'].map(wrapLabel),
+                datasets: [{
+                    data: [100, 60, 30, 10],
+                    backgroundColor: ['#1e293b', '#06b6d4', '#d946ef', '#84cc16'],
+                    borderRadius: 10
+                }]
+            },
+            options: {
+                indexAxis: 'y',
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    x: { display: false },
+                    y: { grid: { display: false }, ticks: { color: '#f8fafc', font: { weight: 'bold' } } }
+                },
+                plugins: {
+                    ...tooltipConfig.plugins,
+                    legend: { display: false },
+                    title: { display: true, text: 'Potencial de Conversión (%)', color: '#94a3b8' }
+                }
+            }
+        });
+
+        new Chart(document.getElementById('financeLineChart'), {
+            type: 'line',
+            data: {
+                labels: ['Inicio', 'Mes 3', 'Mes 6', 'Mes 9', 'Año 1', 'Año 2'].map(wrapLabel),
+                datasets: [{
+                    label: 'Crecimiento de Valor de Marca (€)',
+                    data: [1000, 3500, 8000, 15000, 35000, 85000],
+                    borderColor: '#d946ef',
+                    backgroundColor: 'rgba(217, 70, 239, 0.1)',
+                    fill: true,
+                    tension: 0.4,
+                    pointRadius: 6,
+                    pointHoverRadius: 10
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: { grid: { color: '#1e293b' }, ticks: { color: '#64748b' } },
+                    x: { grid: { display: false }, ticks: { color: '#64748b' } }
+                },
+                plugins: tooltipConfig.plugins
+            }
+        });
+    </script>
+</body>
+</html>
